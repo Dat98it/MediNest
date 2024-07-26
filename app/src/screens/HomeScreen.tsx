@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {MyIcon} from '@src/assets';
 import {RootStackParamList} from '@src/types';
 import React from 'react';
 import {Button, Text, View} from 'react-native';
@@ -14,6 +15,7 @@ export const HomeScreen = () => {
 
   return (
     <View>
+      <MyIcon />
       <Text>Home Screen</Text>
       <Button
         title="Go to Authentication"
