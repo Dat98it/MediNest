@@ -3,7 +3,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {MyIcon} from '@src/assets';
 import {RootStackParamList} from '@src/types';
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Button} from 'react-native-paper';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
@@ -17,7 +17,7 @@ export const HomeScreen = () => {
   return (
     <View>
       <MyIcon />
-      <Text>Home Screen</Text>
+      <Text style={styles.title}>Home Screen</Text>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('Authentication', {itemId: 86})}>
@@ -26,3 +26,7 @@ export const HomeScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {fontSize: 30, fontFamily: 'Nunito'},
+});
