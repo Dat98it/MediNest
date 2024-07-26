@@ -3,7 +3,8 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {MyIcon} from '@src/assets';
 import {RootStackParamList} from '@src/types';
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
+import {Button} from 'react-native-paper';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -18,9 +19,10 @@ export const HomeScreen = () => {
       <MyIcon />
       <Text>Home Screen</Text>
       <Button
-        title="Go to Authentication"
-        onPress={() => navigation.navigate('Authentication', {itemId: 86})}
-      />
+        mode="contained"
+        onPress={() => navigation.navigate('Authentication', {itemId: 86})}>
+        Go to Authentication
+      </Button>
     </View>
   );
 };
