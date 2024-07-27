@@ -14,10 +14,13 @@ export const DefaultTheme = {
     },
   },
   background: {
-    primary: '#0BAB7C',
+    primary: '#F3F2E9',
+    gray: '#E0E0E0',
   },
   text: {
-    primary: '#FFFFFF',
+    primary: '#FBFAF3',
+    gray: '#424242',
+    gray2: '#555555',
   },
 };
 
