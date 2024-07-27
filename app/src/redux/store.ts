@@ -11,18 +11,19 @@ import {
 } from 'redux-persist';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {useDispatch} from 'react-redux';
-import {authSlice} from '@src/redux/reducer';
+import {authSlice, localeSlice} from '@src/redux/reducer';
 
 const persistConfig = {
   key: 'Medinest',
   storage: AsyncStorage,
-  whitelist: [authSlice.name],
+  whitelist: [authSlice.name, localeSlice.name],
 };
 
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
     [authSlice.name]: authSlice.reducer,
+    [localeSlice.name]: localeSlice.reducer,
   }),
 );
 

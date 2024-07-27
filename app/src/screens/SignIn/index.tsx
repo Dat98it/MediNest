@@ -11,8 +11,10 @@ import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import makeStyles from './styles';
 import {useSignIn} from './hook';
+import {useIntl} from 'react-intl';
 
 export const SignIn = () => {
+  const intl = useIntl();
   const theme = useAppTheme();
   const styles = makeStyles(theme);
 
@@ -21,36 +23,43 @@ export const SignIn = () => {
   return (
     <View style={styles.container}>
       <AuthHeader
-        title="Sign In"
-        subTitle="Log in to access your personalized Medinest experience"
+        title={intl.formatMessage({id: 'sign_in'})}
+        subTitle={intl.formatMessage({id: 'sign_in_description'})}
       />
 
       <View style={styles.concent}>
         <EmailInput
-          label="Email adress"
-          placeholder="Enter your email address..."
+          label={intl.formatMessage({id: 'email'})}
+          placeholder={intl.formatMessage({id: 'email_placeholder'})}
           keyboardType="email-address"
         />
-        <InputPassword label="Password" placeholder="Enter your password..." />
+        <InputPassword
+          label={intl.formatMessage({id: 'password'})}
+          placeholder={intl.formatMessage({id: 'password_placeholder'})}
+        />
 
-        <Button label="Sign In" rightIcon />
+        <Button label={intl.formatMessage({id: 'sign_in'})} rightIcon />
 
         <View style={styles.dividerContainer}>
           <HalfDividerIcon />
-          <Text style={styles.orText}>or</Text>
+          <Text style={styles.orText}>{intl.formatMessage({id: 'or'})}</Text>
           <HalfDividerIcon />
         </View>
 
         <SocialButton />
 
         <View style={styles.link}>
-          <Text>Don’t have an account?</Text>
+          <Text>{intl.formatMessage({id: 'dont_have_account'})}</Text>
           <TouchableOpacity onPress={goToSignup}>
-            <Text style={styles.linkText}>Sign Up.</Text>
+            <Text style={styles.linkText}>
+              {intl.formatMessage({id: 'sign_up'})}
+            </Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.link} onPress={goToForgotPassword}>
-          <Text style={styles.linkText}>Forgot your password?</Text>
+          <Text style={styles.linkText}>
+            {intl.formatMessage({id: 'forgot_password'})}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

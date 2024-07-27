@@ -3,6 +3,7 @@ import {useAppTheme} from '@src/hooks';
 import React from 'react';
 import {ImageBackground, Text} from 'react-native';
 import makeStyles from './styles';
+import {LocaleSwitcher} from '../LocaleSwitcher';
 
 type Props = {
   title: string;
@@ -16,7 +17,10 @@ export const AuthHeader = ({title, subTitle}: Props) => {
   return (
     <ImageBackground source={AuthHeaderImage} style={styles.header}>
       <Text style={styles.headerTitle}>{title}</Text>
+
       <Text style={styles.subHeader}>{subTitle}</Text>
+
+      <LocaleSwitcher />
     </ImageBackground>
   );
 };

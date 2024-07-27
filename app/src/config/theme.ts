@@ -16,11 +16,13 @@ export const DefaultTheme = {
   background: {
     primary: '#F3F2E9',
     gray: '#E0E0E0',
+    white: '#FFFFFF',
   },
   text: {
     primary: '#FBFAF3',
     gray: '#424242',
     gray2: '#555555',
+    white: '#FFFFFF',
   },
 };
 
