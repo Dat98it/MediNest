@@ -35,6 +35,10 @@ const makeStyles = (theme: AppTheme) =>
       width: 24,
       height: 24,
     },
+    focused: {
+      borderWidth: 2,
+      borderColor: theme.colors.primary,
+    },
   });
 
 export default makeStyles;

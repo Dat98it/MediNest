@@ -31,6 +31,10 @@ const makeStyles = (theme: AppTheme) =>
       fontSize: 16,
       color: theme.text.gray,
     },
+    focused: {
+      borderWidth: 2,
+      borderColor: theme.colors.primary,
+    },
   });
 
 export default makeStyles;

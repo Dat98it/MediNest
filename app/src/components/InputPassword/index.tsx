@@ -24,6 +24,7 @@ export const InputPassword: React.FC<InputPasswordProps> = ({
   const styles = makeStyles(theme);
 
   const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const toggleSecureTextEntry = () => {
     setSecureTextEntry(!secureTextEntry);
@@ -31,7 +32,7 @@ export const InputPassword: React.FC<InputPasswordProps> = ({
   return (
     <View style={styles.container}>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={styles.inputContainer}>
+      <View style={[styles.inputContainer, isFocused && styles.focused]}>
         <View style={styles.icon}>
           <PasswordIcon />
         </View>
@@ -41,10 +42,12 @@ export const InputPassword: React.FC<InputPasswordProps> = ({
           value={value}
           onChangeText={onChangeText}
           secureTextEntry={secureTextEntry}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
         />
         <TouchableOpacity onPress={toggleSecureTextEntry}>
           <View style={styles.eyeIcon}>
-            <EyeIcon />
+            <EyeIcon color={isFocused ? theme.colors.primary : undefined} />
           </View>
         </TouchableOpacity>
       </View>
