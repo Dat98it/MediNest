@@ -2,16 +2,12 @@ import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {Paths} from '@src/constans';
 import {AuthenticationRootStack} from '@src/types';
 
-export const useSignUp = () => {
+export const useResetPassword = () => {
   const navigation = useNavigation<NavigationProp<AuthenticationRootStack>>();
 
   const goToSignIn = () => {
     navigation.navigate(Paths.SignIn);
   };
 
-  const goToForgotPassword = () => {
-    navigation.navigate(Paths.ResetPassword);
-  };
-
-  return {goToSignIn, goToForgotPassword};
+  return {goToSignIn};
 };

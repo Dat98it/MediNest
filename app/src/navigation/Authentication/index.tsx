@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Paths} from '@src/constans';
-import {ForgotPassword, SignIn, SignUp} from '@src/screens';
+import {ResetPassword, SignIn, SignUp} from '@src/screens';
 import {AuthenticationRootStack} from '@src/types';
 import React from 'react';
 
@@ -17,8 +17,8 @@ export const Authentication = () => {
       <AuthenticationStack.Screen name={Paths.SignUp} component={SignUp} />
 
       <AuthenticationStack.Screen
-        name={Paths.ForgotPassword}
-        component={ForgotPassword}
+        name={Paths.ResetPassword}
+        component={ResetPassword}
       />
     </AuthenticationStack.Navigator>
   );

@@ -3,5 +3,5 @@ export enum Paths {
   Authentication = 'Authentication',
   SignIn = 'SignIn',
   SignUp = 'SignUp',
-  ForgotPassword = 'ForgotPassword',
+  ResetPassword = 'ResetPassword',
 }

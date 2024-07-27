@@ -6,5 +6,5 @@ export type AppRootStackParams = {
 export type AuthenticationRootStack = {
   SignIn: undefined;
   SignUp: undefined;
-  ForgotPassword: undefined;
+  ResetPassword: undefined;
 };

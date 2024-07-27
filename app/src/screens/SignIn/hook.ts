@@ -10,7 +10,7 @@ export const useSignIn = () => {
   };
 
   const goToForgotPassword = () => {
-    navigation.navigate(Paths.ForgotPassword);
+    navigation.navigate(Paths.ResetPassword);
   };
 
   return {goToSignup, goToForgotPassword};
