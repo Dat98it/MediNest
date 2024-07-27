@@ -1,24 +1,65 @@
+import {HalfDividerIcon} from '@src/assets';
+import {
+  AuthHeader,
+  Button,
+  EmailInput,
+  InputPassword,
+  SocialButton,
+} from '@src/components';
+import {useAppTheme} from '@src/hooks';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {useSignUp} from './hook';
+import makeStyles from './styles';
 
 export const SignUp = () => {
+  const theme = useAppTheme();
+  const styles = makeStyles(theme);
+
+  const {goToSignIn, goToForgotPassword} = useSignUp();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Sign Up Component</Text>
+      <AuthHeader
+        title="Sign Up For Free"
+        subTitle={
+          'Let’s experience the joy of telehealth Medinest \n All In One App'
+        }
+      />
+
+      <View style={styles.concent}>
+        <EmailInput
+          label="Email adress"
+          placeholder="Enter your email address..."
+          keyboardType="email-address"
+        />
+        <InputPassword label="Password" placeholder="Enter your password..." />
+
+        <InputPassword
+          label="Confirm Password"
+          placeholder="Enter your confirm password..."
+        />
+
+        <Button label="Sign Up" rightIcon />
+
+        <View style={styles.dividerContainer}>
+          <HalfDividerIcon />
+          <Text style={styles.orText}>or</Text>
+          <HalfDividerIcon />
+        </View>
+
+        <SocialButton />
+
+        <View style={styles.link}>
+          <Text>You have an account?</Text>
+          <TouchableOpacity onPress={goToSignIn}>
+            <Text style={styles.linkText}>Sign In.</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.link} onPress={goToForgotPassword}>
+          <Text style={styles.linkText}>Forgot your password?</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f0f0f0',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'blue',
-  },
-});
