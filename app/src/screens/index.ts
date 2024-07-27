@@ -1,2 +1,2 @@
-export * from './HomeScreen';
-export * from './AuthenticationStack';
+export * from './Home';
+export * from './Authentication';

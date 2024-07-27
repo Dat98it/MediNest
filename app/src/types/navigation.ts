@@ -1,4 +1,4 @@
-export type RootStackParamList = {
+export type AppRootStackParams = {
   Home: undefined;
-  Authentication: {itemId: number; otherParam?: string};
+  Authentication: undefined;
 };

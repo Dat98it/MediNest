@@ -1,28 +1,28 @@
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {MyIcon} from '@src/assets';
-import {RootStackParamList} from '@src/types';
+import {FacebookIcon, GoogleIcon, InstagramIcon} from '@src/assets';
+import {AppRootStackParams} from '@src/types';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 
-type HomeScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
+type HomeStackNavigationProp = NativeStackNavigationProp<
+  AppRootStackParams,
   'Home'
 >;
 
-export const HomeScreen = () => {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
+export const Home = () => {
+  const navigation = useNavigation<HomeStackNavigationProp>();
 
   return (
     <View>
-      <Icon name="comments" size={30} color="green" />
-      <MyIcon />
+      <FacebookIcon />
+      <GoogleIcon />
+      <InstagramIcon />
       <Text style={styles.title}>Home Screen</Text>
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('Authentication', {itemId: 86})}>
+        onPress={() => navigation.navigate('Authentication')}>
         Go to Authentication
       </Button>
     </View>
