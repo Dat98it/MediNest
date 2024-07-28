@@ -7,7 +7,7 @@ const makeStyles = (theme: AppTheme, focused: boolean) =>
       height: 50,
       width: 50,
       ...(focused && {
-        backgroundColor: theme.colors.primary,
+        backgroundColor: theme.background.white,
       }),
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -17,8 +17,8 @@ const makeStyles = (theme: AppTheme, focused: boolean) =>
     },
     lineBottom: {
       height: 5,
-      width: 20,
-      backgroundColor: theme.background.white,
+      width: 25,
+      backgroundColor: theme.colors.primary,
       borderTopLeftRadius: 5,
       borderTopRightRadius: 5,
     },

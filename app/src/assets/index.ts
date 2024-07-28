@@ -12,3 +12,4 @@ export {default as ArrowLeftIcon} from './icons/arrow-left.svg';
 
 // images
 export {default as AuthHeaderImage} from './images/auth-header.png';
+export {default as DoctorAvatarImage} from './images/doctor-avt.png';

@@ -45,7 +45,7 @@ export const TabBarIcon: React.FC<TabBarIconProps> = ({
       <IconComponent
         name={iconName}
         size={routeName === HomeStacks.Medicine ? 21 : size}
-        color={!focused ? theme.colors.primary : theme.background.white}
+        color={focused ? theme.colors.primary : theme.background.white}
       />
       <View style={styles.lineBottom} />
     </View>

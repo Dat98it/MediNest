@@ -19,7 +19,8 @@ const AppRootStack = createNativeStackNavigator<AppRootStackParams>();
 const DrawerStack = createDrawerNavigator();
 
 export const AppNavigator = () => {
-  const auth = useSelector(authSelector);
+  // const auth = useSelector(authSelector);
+  const auth = 'abcd';
 
   const locale = useSelector(localeSelector);
 

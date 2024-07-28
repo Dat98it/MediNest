@@ -39,17 +39,7 @@ export const BottomStackScreen = () => {
 const makeStyles = (theme: AppTheme, inset: EdgeInsets) =>
   StyleSheet.create({
     tabBarStyle: {
-      backgroundColor: theme.background.white,
-      height: 70,
-      marginHorizontal: 20,
-      marginBottom: inset.bottom > 0 ? inset.bottom : 15,
-      borderRadius: 25,
-      // iOS shadow properties
-      shadowColor: theme.background.black,
-      shadowOffset: {width: 0, height: 8},
-      shadowOpacity: 0.15,
-      shadowRadius: 3.84,
-      // Android shadow property
-      elevation: 5,
+      backgroundColor: theme.colors.primary,
+      height: 70 + inset.bottom,
     },
   });

@@ -1,22 +1,36 @@
+import {useAppTheme} from '@src/hooks';
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {ScrollView, View} from 'react-native';
+import {
+  Advise,
+  Header,
+  PopularDepartment,
+  PopularMedicine,
+  TopDoctors,
+} from './components';
+import makeStyles from './styles';
 
 export const Home = () => {
+  const theme = useAppTheme();
+  const styles = makeStyles(theme);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to the Home Component</Text>
+      <Header />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        nestedScrollEnabled={true}>
+        <View style={styles.content}>
+          <Advise />
+
+          <PopularMedicine />
+
+          <PopularDepartment />
+
+          <TopDoctors />
+        </View>
+      </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
