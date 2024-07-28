@@ -8,12 +8,12 @@ import {useSelector} from 'react-redux';
 import {authSelector, localeSelector} from '@src/redux/reducer';
 import {AppRootStackParams} from '@src/types';
 import {Paths} from '@src/constans';
-import {Home} from './Home';
 import {Authentication} from './Authentication';
 import {IntlProvider} from 'react-intl';
 import {messages} from '@src/locale';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {CustomDrawerContent} from '@src/components';
+import {BottomStackScreen} from './BottomStackScreen';
 
 const AppRootStack = createNativeStackNavigator<AppRootStackParams>();
 const DrawerStack = createDrawerNavigator();
@@ -36,7 +36,10 @@ export const AppNavigator = () => {
               screenOptions={{
                 headerShown: false,
               }}>
-              <DrawerStack.Screen name="Home" component={Home} />
+              <DrawerStack.Screen
+                name={Paths.BottomStack}
+                component={BottomStackScreen}
+              />
             </DrawerStack.Navigator>
           ) : (
             <AppRootStack.Navigator>
